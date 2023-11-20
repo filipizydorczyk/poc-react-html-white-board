@@ -1,7 +1,13 @@
 import React from "react";
+import { WhiteBoardSpace } from "./WhiteBoardSpace";
+import { WhiteBoardContainer } from "./WhiteBoardContainer";
 
-interface ReactHtmlWhiteBoardProps {}
+// interface ReactHtmlWhiteBoardProps {}
 
-export const ReactHtmlWhiteBoard = ({}: ReactHtmlWhiteBoardProps) => {
-    return <h1>It is supposed to be file</h1>;
+export const ReactHtmlWhiteBoard = () => {
+  return (
+    <WhiteBoardSpace>
+      <WhiteBoardContainer></WhiteBoardContainer>
+    </WhiteBoardSpace>
+  );
 };
