@@ -2,12 +2,18 @@ import React from "react";
 import { WhiteBoardSpace } from "./WhiteBoardSpace";
 import { WhiteBoardContainer } from "./WhiteBoardContainer";
 
-// interface ReactHtmlWhiteBoardProps {}
+interface ReactHtmlWhiteBoardProps {
+  width: number;
+  height: number;
+}
 
-export const ReactHtmlWhiteBoard = () => {
+export const ReactHtmlWhiteBoard = ({
+  width,
+  height,
+}: ReactHtmlWhiteBoardProps) => {
   return (
-    <WhiteBoardSpace>
-      <WhiteBoardContainer></WhiteBoardContainer>
+    <WhiteBoardSpace width={width} height={height}>
+      <WhiteBoardContainer top={15} left={15}></WhiteBoardContainer>
     </WhiteBoardSpace>
   );
 };

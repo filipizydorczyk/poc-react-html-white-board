@@ -1,20 +1,23 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { ReactHtmlWhiteBoard } from './ReactHtmlWhiteBoard';
+import { ReactHtmlWhiteBoard } from "./ReactHtmlWhiteBoard";
 
-const meta = {
-  title: 'ReactHtmlWhiteBoard',
+const meta: Meta<typeof ReactHtmlWhiteBoard> = {
+  title: "ReactHtmlWhiteBoard",
   component: ReactHtmlWhiteBoard,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof ReactHtmlWhiteBoard>;
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof ReactHtmlWhiteBoard>;
 
-export const Primary: Story = {};
-
+export const Primary: Story = {
+  render: () => (
+    <ReactHtmlWhiteBoard width={600} height={600} />
+  ),
+};
