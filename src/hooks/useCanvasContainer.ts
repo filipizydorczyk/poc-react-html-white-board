@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { X, Y } from "./constants";
-import { Position } from "./types";
+import { X, Y } from "../constants";
+import { Cords } from "../types";
 
 const useCanvasContainer = () => {
-  const [position, setPosition] = useState<Position>([0, 0]);
+  const [position, setPosition] = useState<Cords>([0, 0]);
 
-  const [refrencePoint, setRefrencePoint] = useState<Position>([0, 0]);
-  const [focusPoint, setFocusPoint] = useState<Position>();
+  const [refrencePoint, setRefrencePoint] = useState<Cords>([0, 0]);
+  const [focusPoint, setFocusPoint] = useState<Cords>();
 
   const focus: React.MouseEventHandler<HTMLDivElement> = (e) => {
     setFocusPoint([e.clientX, e.clientY]);

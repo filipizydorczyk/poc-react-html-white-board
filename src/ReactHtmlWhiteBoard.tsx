@@ -1,7 +1,7 @@
 import React from "react";
-import { WhiteBoardSpace } from "./WhiteBoardSpace";
-import { WhiteBoardContainer } from "./WhiteBoardContainer";
-import { useCanvasContainer } from "./useCanvasContainer";
+import { WhiteBoardSpace } from "./components/WhiteBoardSpace";
+import { WhiteBoardContainer } from "./components/WhiteBoardContainer";
+import { useCanvasContainer } from "./hooks/useCanvasContainer";
 import { X, Y } from "./constants";
 
 interface ReactHtmlWhiteBoardProps {

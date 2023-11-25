@@ -1,1 +1,2 @@
-export type Position = [number, number];
+export type Cords = [number, number];
+export type Orientation = 'top' | 'right' | 'bottom' | 'left';
