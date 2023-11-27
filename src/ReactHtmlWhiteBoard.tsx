@@ -1,32 +1,22 @@
 import React from "react";
 import { WhiteBoardSpace } from "./components/WhiteBoardSpace";
 import { WhiteBoardContainer } from "./components/WhiteBoardContainer";
-import { useCanvasContainer } from "./hooks/useCanvasContainer";
 import { X, Y } from "./constants";
+import { Cords } from "./types";
+import { WhiteBoardItem } from "./components/WhiteBoardItem";
 
 interface ReactHtmlWhiteBoardProps {
-  width: number;
-  height: number;
+  size: Cords;
 }
 
-export const ReactHtmlWhiteBoard = ({
-  width,
-  height,
-}: ReactHtmlWhiteBoardProps) => {
-  const { position, focus, unfocus, updateContainerPosition } =
-    useCanvasContainer();
+export const ReactHtmlWhiteBoard = ({ size }: ReactHtmlWhiteBoardProps) => {
   return (
-    <WhiteBoardSpace
-      width={width}
-      height={height}
-      onMouseDown={focus}
-      onMouseUp={unfocus}
-      onMouseMove={updateContainerPosition}
-    >
+    <WhiteBoardSpace width={size[X]} height={size[Y]}>
       <WhiteBoardContainer
-        top={position[Y]}
-        left={position[X]}
-      ></WhiteBoardContainer>
+        size={[size[X] + 100, size[Y] + 100]}
+      >
+        <WhiteBoardItem/>
+      </WhiteBoardContainer>
     </WhiteBoardSpace>
   );
 };

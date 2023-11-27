@@ -2,7 +2,7 @@ import { useState } from "react";
 import { X, Y } from "../constants";
 import { Cords } from "../types";
 
-const useCanvasContainer = () => {
+const useItem = () => {
   const [position, setPosition] = useState<Cords>([0, 0]);
 
   const [refrencePoint, setRefrencePoint] = useState<Cords>([0, 0]);
@@ -17,7 +17,7 @@ const useCanvasContainer = () => {
     setFocusPoint(undefined);
   };
 
-  const updateContainerPosition: React.MouseEventHandler<HTMLDivElement> = (
+  const updateItemPosition: React.MouseEventHandler<HTMLDivElement> = (
     e
   ) => {
     if (focusPoint) {
@@ -28,7 +28,7 @@ const useCanvasContainer = () => {
     }
   };
 
-  return { position, focus, unfocus, updateContainerPosition };
+  return { position, focus, unfocus, updateItemPosition };
 };
 
-export { useCanvasContainer };
+export { useItem };

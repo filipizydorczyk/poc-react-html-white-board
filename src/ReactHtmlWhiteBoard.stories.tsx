@@ -18,6 +18,6 @@ type Story = StoryObj<typeof ReactHtmlWhiteBoard>;
 
 export const Primary: Story = {
   render: () => (
-    <ReactHtmlWhiteBoard width={600} height={600} />
+    <ReactHtmlWhiteBoard size={[600,600]} />
   ),
 };
