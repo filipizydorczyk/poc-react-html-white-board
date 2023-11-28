@@ -9,6 +9,7 @@ const useItem = () => {
   const [focusPoint, setFocusPoint] = useState<Cords>();
 
   const focus: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    e.stopPropagation();
     setFocusPoint([e.clientX, e.clientY]);
     setRefrencePoint(position);
   };

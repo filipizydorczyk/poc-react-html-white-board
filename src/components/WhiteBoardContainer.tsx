@@ -3,15 +3,15 @@ import { Cords } from "../types";
 import { X, Y } from "../constants";
 
 interface WhiteBoardContainerProps {
-  size: Cords
+  size: Cords;
 }
 
 export const WhiteBoardContainer = ({
   children,
-  size
+  size,
 }: React.PropsWithChildren<WhiteBoardContainerProps>) => {
   const styles: React.CSSProperties = {
-    position: 'relative',
+    position: "relative",
     backgroundColor: "white",
     backgroundSize: "40px 40px",
     backgroundImage: /* CSS */ `linear-gradient(to right, rgb(218, 218, 218) 1px, transparent 1px), linear-gradient(to bottom, rgb(218, 218, 218) 1px, transparent 1px)`,
@@ -19,10 +19,5 @@ export const WhiteBoardContainer = ({
     height: size[Y],
   };
 
-
-  return (
-    <div style={styles}>
-      {children}
-    </div>
-  );
+  return <div style={styles}>{children}</div>;
 };
