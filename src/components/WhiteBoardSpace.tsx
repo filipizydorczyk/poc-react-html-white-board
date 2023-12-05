@@ -24,8 +24,6 @@ export const WhiteBoardSpace = ({
       onMouseDown={focus}
       onMouseUp={unfocus}
       onMouseMove={updateScrolling}
-      onWheel={(e) => console.log(e.deltaX, e.deltaY)}
-      onScroll={(e) => console.log(e.target.scrollTop, e.target.scrollLeft)}
       style={styles}
     >
       {children}
