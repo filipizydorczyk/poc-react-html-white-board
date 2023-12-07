@@ -7,15 +7,19 @@ import { WhiteBoardItem } from "./components/WhiteBoardItem";
 
 interface ReactHtmlWhiteBoardProps {
   size: Cords;
+  viewPort: Cords;
+  zoom?: number;
 }
 
-export const ReactHtmlWhiteBoard = ({ size }: ReactHtmlWhiteBoardProps) => {
+export const ReactHtmlWhiteBoard = ({
+  size,
+  viewPort,
+  zoom = 1,
+}: ReactHtmlWhiteBoardProps) => {
   return (
-    <WhiteBoardSpace width={size[X]} height={size[Y]}>
-      <WhiteBoardContainer
-        size={[size[X] + 100, size[Y] + 100]}
-      >
-        <WhiteBoardItem/>
+    <WhiteBoardSpace width={viewPort[X]} height={viewPort[Y]}>
+      <WhiteBoardContainer size={size} zoom={zoom}>
+        <WhiteBoardItem />
       </WhiteBoardContainer>
     </WhiteBoardSpace>
   );
