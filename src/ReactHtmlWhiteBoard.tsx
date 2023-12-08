@@ -1,7 +1,6 @@
 import React from "react";
 import { WhiteBoardSpace } from "./components/WhiteBoardSpace";
 import { WhiteBoardContainer } from "./components/WhiteBoardContainer";
-import { X, Y } from "./constants";
 import { Cords } from "./types";
 import { WhiteBoardItem } from "./components/WhiteBoardItem";
 
@@ -17,7 +16,7 @@ export const ReactHtmlWhiteBoard = ({
   zoom = 1,
 }: ReactHtmlWhiteBoardProps) => {
   return (
-    <WhiteBoardSpace width={viewPort[X]} height={viewPort[Y]}>
+    <WhiteBoardSpace size={viewPort}>
       <WhiteBoardContainer size={size} zoom={zoom}>
         <WhiteBoardItem />
       </WhiteBoardContainer>

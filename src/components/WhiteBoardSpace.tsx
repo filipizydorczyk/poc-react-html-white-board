@@ -1,22 +1,22 @@
 import React from "react";
 import { useSpace } from "../hooks/useSpace";
+import { Cords } from "../types";
+import { X, Y } from "../constants";
 
 interface WhiteBoardSpaceProps {
-  width: number;
-  height: number;
+  size: Cords;
 }
 
 export const WhiteBoardSpace = ({
-  width,
-  height,
+  size,
   children,
 }: React.PropsWithChildren<WhiteBoardSpaceProps>) => {
   const { focus, unfocus, updateScrolling } = useSpace();
   const styles: React.CSSProperties = {
     overflow: "scroll",
     backgroundColor: "#ededed",
-    width,
-    height,
+    width: size[X],
+    height: size[Y],
   };
 
   return (
