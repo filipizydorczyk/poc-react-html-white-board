@@ -2,7 +2,6 @@ import React from "react";
 import { WhiteBoardSpace } from "./components/WhiteBoardSpace";
 import { WhiteBoardContainer } from "./components/WhiteBoardContainer";
 import { Cords } from "./types";
-import { WhiteBoardItem } from "./components/WhiteBoardItem";
 
 interface ReactHtmlWhiteBoardProps {
   size: Cords;
@@ -14,11 +13,12 @@ export const ReactHtmlWhiteBoard = ({
   size,
   viewPort,
   zoom = 1,
-}: ReactHtmlWhiteBoardProps) => {
+  children,
+}: React.PropsWithChildren<ReactHtmlWhiteBoardProps>) => {
   return (
     <WhiteBoardSpace size={viewPort}>
       <WhiteBoardContainer size={size} zoom={zoom}>
-        <WhiteBoardItem />
+        {children}
       </WhiteBoardContainer>
     </WhiteBoardSpace>
   );
